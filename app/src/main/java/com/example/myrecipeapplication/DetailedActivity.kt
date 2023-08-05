@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 class DetailedActivity : AppCompatActivity() {
 
@@ -18,7 +19,8 @@ class DetailedActivity : AppCompatActivity() {
             val imageView : ImageView = findViewById(R.id.detailedActivityIV)
 
             textView.text = food.name
-            imageView.setImageResource(food.image)
+            Glide.with(this).load(food.image).into(imageView);
+            //imageView.setImageResource(food.image)
         }
     }
 }

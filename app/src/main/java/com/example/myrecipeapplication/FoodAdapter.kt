@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class FoodAdapter (private val foodList:ArrayList<Food>)
     : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>(){
@@ -29,7 +30,8 @@ class FoodAdapter (private val foodList:ArrayList<Food>)
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         val food = foodList[position]
-        holder.imageView.setImageResource(food.image)
+        //holder.imageView.setImageResource(food.image)
+        Glide.with(holder.itemView.context).load(food.image).into(holder.imageView);
         holder.textView.text = food.name
 
         holder.itemView.setOnClickListener {

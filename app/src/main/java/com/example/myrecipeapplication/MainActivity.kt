@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         foodAdapter.onItemClick = {
             val intent = Intent(this ,DetailedActivity::class.java)
             intent.putExtra("food" , it)
-            startActivity(intent )
+            startActivity(intent)
         }
     }
 }
